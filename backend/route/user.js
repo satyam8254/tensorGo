@@ -17,12 +17,31 @@ router.get("/", async(req,res)=>{
 })
 
 
+
+router.get("/:id",async(req,res)=>{
+    try {
+        const pid = req.params.id;
+        const user = await User.findById(pid);
+        res.json(user)
+    } catch (error) {
+        res.status(200).json({
+            status: "failed",
+            error: error.message
+        })
+    }
+    
+   
+})
+
+
+
+
 router.put("/:id",async(req,res)=>{
     try {
         const user = await User.findByIdAndUpdate({_id: req.params.id},req.body,{new:true})
         res.json({
             status:"user updated",
-            data:user
+            data: user
         })
     } 
     catch (error) {
@@ -33,20 +52,6 @@ router.put("/:id",async(req,res)=>{
         
     }
 })
-
-router.delete("/:id",async(req,res)=>{
-    try {
-        const user = await User.deleteOne({_id: req.params.id})
-        res.json(user)
-    } 
-    catch (error) {
-        res.status(200).json({
-            status:"user deleted",
-            message:error.message
-        })
-    }
-})
-
 
 
 module.exports = router

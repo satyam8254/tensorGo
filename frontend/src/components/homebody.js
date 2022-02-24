@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import "./homebody.css";
 import {Row,Col} from "react-bootstrap";
+import { Link } from "react-router-dom";
 function Homebody(){
     const [user,setUser] = useState([]);
     useEffect(()=>{
@@ -34,13 +35,14 @@ function Homebody(){
 
                                     <div class="card-footer">
                                     <div className="footer-container">
-                                        <div className="footer-container-item"><h5>view</h5></div>
-                                        <div className="footer-container-item"><h5>edit</h5></div>
-                                        <div className="footer-container-item"><h5>export</h5></div>
+                                        <div className="footer-container-item"><Link to={`/users/${data._id}`}><button className="btn">View</button></Link> </div>
+                                        <div className="footer-container-item"><Link to="/form"><button className="btn">Edit</button></Link></div>
+                                        <div className="footer-container-item"><button className="btn">Export</button></div>
                                     </div>
                                     </div>
                             </div>
                         </div>
+                        
                     </Col>
                 ))}
                 
@@ -49,3 +51,6 @@ function Homebody(){
     );
 }
 export default Homebody;
+
+
+
