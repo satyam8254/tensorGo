@@ -10,6 +10,9 @@ env.config();
 mongoose.connect(process.env.DATABASE);
 const PORT = process.env.PORT
 app = express();
+
+app.use(express.json());
+
 app.use(cors())
 app.get("/push",async(req,res)=>{
     const data = await User.insertMany(userData);

@@ -37,6 +37,7 @@ router.get("/:id",async(req,res)=>{
 
 
 router.put("/:id",async(req,res)=>{
+    console.log(req.body)
     try {
         const user = await User.findByIdAndUpdate({_id: req.params.id},req.body,{new:true})
         res.json({
@@ -45,7 +46,7 @@ router.put("/:id",async(req,res)=>{
         })
     } 
     catch (error) {
-        res.status(200).json({
+        res.status(400).json({
             status:"error",
             message:error.message 
         })
