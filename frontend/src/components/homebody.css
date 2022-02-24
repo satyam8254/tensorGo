@@ -1,0 +1,18 @@
+.main-container{
+    width: 98%;
+    align-items: center;
+}
+
+.footer-container{
+    display: flex;
+}
+.footer-container-item{
+    margin-left: 6%;
+    margin-right: 11%;
+    text-align: center;
+}
+
+
+
+
+  
