@@ -1,33 +1,12 @@
 import React from "react";
+import { useParams } from "react-router";
 import "./form.css";
 
 function Form(){
-    // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [gender, setGender] = useState("");
-    // const [status, seStatus] = useState("");
-
-    // const {id} = useParams();
-    // const [userdata,setData] = useState({});
-   
-    // useEffect(()=>{
-    //     const fetchData = ()=>{
-    //         fetch(`http://localhost:5000/users/${id}`)
-    //             .then((response)=>{
-    //                 return response.json();
-    //             })
-    //             .then((data)=>{
-    //                 console.log(data);
-    //                 setData(data)
-    //         })
-    //     }
-    //     fetchData();
-    // },[id])
-
-
+    const {id} = useParams();
     return(
         <div className="main-form-container">
-            <form>
+            <form method="POST" action={`users/${id}`}>
                 <div className="form-container">
 
                 <label>Enter name:</label>
@@ -58,7 +37,7 @@ function Form(){
                 // onChange={(e) => seStatus(e.target.value)}
                 />
                 </div>
-                <button onClick="">Update</button>
+                <input type="submit" value="submit"/>
                 
             </form>      
 

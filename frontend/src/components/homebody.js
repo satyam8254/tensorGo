@@ -36,7 +36,7 @@ function Homebody(){
                                     <div class="card-footer">
                                     <div className="footer-container">
                                         <div className="footer-container-item"><Link to={`/users/${data._id}`}><button className="btn">View</button></Link> </div>
-                                        <div className="footer-container-item"><Link to={"/form"}><button className="btn">Edit</button></Link></div>
+                                        <div className="footer-container-item"><Link to={`/form/${data._id}`}><button className="btn">Edit</button></Link></div>
                                         <div className="footer-container-item"><button className="btn">Export</button></div>
                                     </div>
                                     </div>
