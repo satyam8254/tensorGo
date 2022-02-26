@@ -19,14 +19,7 @@ app.get("/push",async(req,res)=>{
     res.json(data);
 })
 
-// app.post("/form/users/:id", async(req,res)=>{
-//     console.log(req.body);
-//     res.json({
-//         status:"ok"
-//     });
-// })
 
 app.use("/users",userRoutes)
-app.use("/form",userRoutes)
 
 app.listen(5000,console.log(`server is running at Port :-${PORT}`));
