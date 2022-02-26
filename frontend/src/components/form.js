@@ -6,7 +6,8 @@ function Form(){
     const {id} = useParams();
     return(
         <div className="main-form-container">
-            <form method="POST" action={`users/${id}`}>
+            <form method="PUT" action={`http://localhost:5000/users/${id}`}>
+            {/* <form method="PUT" action="/"> */}
                 <div className="form-container">
 
                 <label>Enter name:</label>

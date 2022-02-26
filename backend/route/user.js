@@ -18,10 +18,14 @@ router.get("/", async(req,res)=>{
 
 
 
+
+
+
 router.get("/:id",async(req,res)=>{
     try {
         const pid = req.params.id;
         const user = await User.findById(pid);
+        console.log(user)
         res.json(user)
     } catch (error) {
         res.status(200).json({
@@ -32,8 +36,6 @@ router.get("/:id",async(req,res)=>{
     
    
 })
-
-
 
 
 router.put("/:id",async(req,res)=>{
@@ -53,6 +55,10 @@ router.put("/:id",async(req,res)=>{
         
     }
 })
+
+
+
+
 
 
 module.exports = router

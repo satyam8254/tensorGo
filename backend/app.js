@@ -27,5 +27,6 @@ app.get("/push",async(req,res)=>{
 // })
 
 app.use("/users",userRoutes)
+app.use("/form",userRoutes)
 
 app.listen(5000,console.log(`server is running at Port :-${PORT}`));
